@@ -1,10 +1,11 @@
 package objetos;
 
 public class Fecha {
-	int dia;
-	int mes;
-	int anio;
+	private int dia;
+	private int mes;
+	private int anio;
 
+	//Constructor
 	public Fecha(int d, int m, int a) {
 		this.dia = d;
 		this.mes = m;
@@ -36,11 +37,19 @@ public class Fecha {
 
 	}
 
-	public static void main(String[] args) {
-		Fecha f = new Fecha(9, 12, 2011);
-		f.imprimir();
-		
-		System.out.println(diasDelMes(4,2021));	
+	public int getDia() {
+		return dia;
 	}
+
+	public int getMes() {
+		return mes;
+	}
+
+	public int getAnio() {
+		return anio;
+	}
+
+	
+
 
 }
