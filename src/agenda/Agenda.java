@@ -25,7 +25,25 @@ public class Agenda {
 				return;
 			}else { // si no hay lugar en la agenda
 				
-			
+				//Agrandar
+				Persona[] contactosAux = new Persona[this.contactos.length+1];
+				String[] telefonosAux = new String[this.telefonos.length+1];
+				
+				//Copiar contactos y telefonos
+				for (int j = 0; j < contactos.length; j++) {
+					contactosAux[j] = contactos[j];
+					telefonosAux[j] = telefonos[j];
+				}
+				
+				//guardar
+				contactosAux[contactos.length] = contacto;
+				telefonosAux[telefonos.length] = telefono;
+				
+				//sobreescribir
+				this.contactos = contactosAux;
+				this.telefonos = telefonosAux;
+				
+				return;
 			}
 		}
 		
@@ -38,6 +56,8 @@ public class Agenda {
 			}
 		}
 	}
+	
+
 
 	
 
