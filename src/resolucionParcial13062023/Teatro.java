@@ -7,6 +7,35 @@ public class Teatro {
 	Obra[] obras;
 
 	//a)
+	public Obra masBarata() {
+		
+		//en caso de que no haya obras
+		if (obras == null || obras.length == 0) {
+			return null;
+		}
+		
+		Obra obraMasBarata = null;
+		double precioMasBajo = obras[0].funciones[0].sectores[0].precio;
+		
+		for (Obra o : obras) {
+			for (Funcion f : o.funciones) {
+				for (Sector s : f.sectores) {
+					if (s.precio <= precioMasBajo) {
+						precioMasBajo = s.precio;
+						obraMasBarata = o;
+					}
+				}
+			}
+		}
+		
+		return obraMasBarata;
+		
+	}
+	
+	
+	
+	
+
 	
 	
 	
